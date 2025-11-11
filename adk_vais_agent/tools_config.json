@@ -1,0 +1,16 @@
+[
+  {
+    "name": "hacker_news_articles",
+    "description": "Use this tool to search for news on technology world",
+    "datastore_id": "hacker-news-articles_1758657747159",
+    "location_id": "global",
+    "project_id": "speca-sandbox-argolis" 
+  },
+  {
+    "name": "hr_policy_tool",
+    "description": "Use this tool to search for human resources policies, employee handbook, and benefits information.",
+    "datastore_id": "rh-politicas-internas_1758210103794",
+    "location_id": "global",
+    "project_id": "speca-sandbox-argolis"
+  }
+]
