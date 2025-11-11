@@ -31,6 +31,23 @@ The key feature of this agent is its ability to support **multiple knowledge bas
 * Existing Data Stores created in Vertex AI Search (e.g., Website search, Unstructured data).
 * Appropriate IAM permissions to access the Data Stores (e.g., `Discovery Engine Viewer` or `Discovery Engine Editor`).
 
+## IAM Permissions & Service Account (Crucial)
+
+To ensure the agent functions correctly when deployed to **Vertex AI Agent Engine**, you must configure the correct permissions for the runtime Service Account.
+
+**The Rule:**
+The Service Account used by the Agent Engine runtime must have the **Discovery Engine User** role (`roles/discoveryengine.user`) on the Google Cloud Project(s) that host your Datastores.
+
+**Steps:**
+1.  Identify the Service Account that will run the agent (default or custom).
+2.  Navigate to the **IAM & Admin** console of the project where your **Datastores** are located.
+3.  Click **Grant Access**.
+4.  Enter the Agent Engine Service Account email.
+5.  Select the role: **Discovery Engine User** (or `Discovery Engine Viewer`).
+6.  Save.
+
+*Note: If your Agent and Datastores are in the same project, just ensure the Service Account has this role on the project.*
+
 ## Installation and Execution Guide
 
 Follow the steps below to set up and run the project.
@@ -40,7 +57,7 @@ Follow the steps below to set up and run the project.
 If you are starting on a new machine, clone the repository.
 
 ```bash
-git clone git@github.com:your-org/adk_vais_agent.git
+git clone git@github.com:speca-google/adk_vais_agent.git
 cd adk_vais_agent
 ```
 
